@@ -1,7 +1,5 @@
 import React, { useContext, useState } from "react";
-// import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import DriveFileRenameOutlineOutlinedIcon from "@mui/icons-material/DriveFileRenameOutlineOutlined";
-import DeleteIcon from "@mui/icons-material/Delete";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import { Modal, Button } from "react-bootstrap";
 import { Remove, Update_data } from "../redux/actions/action";
@@ -10,22 +8,13 @@ import { DeleteContext } from "./context/ContextProvider";
 
 const Todo = () => {
   const { User_data } = useSelector((state) => state.todoreducers);
-  // console.log(User_data);
-
   const { setDlettask } = useContext(DeleteContext);
-
   const dispatch = useDispatch();
 
-  // show modal state
-  const [showeye, setShoweye] = useState(false);
-
-  // setvalue state
-  const [showeyevalue, setShoweyeValue] = useState("");
-
+  const [showeye, setShoweye] = useState(false); // show modal state
+  const [showeyevalue, setShoweyeValue] = useState(""); // setvalue state
   const [show, setShow] = useState(false);
-
   const [update, setUpdate] = useState("");
-
   const [ind, setInd] = useState("");
 
   const handleClose = () => setShow(false);
@@ -65,7 +54,8 @@ const Todo = () => {
                   borderRight: "none",
                   borderTop: "none",
                   borderBottom: "none",
-                  borderRadius: "4px",                }}
+                  borderRadius: "4px",
+                }}
               >
                 <li style={{ listStyle: "none" }}>{ele}</li>
                 <div className="edit_dlt col-lg-3 py-2 d-flex justify-content-between align-items-center">
@@ -89,7 +79,6 @@ const Todo = () => {
                       <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
                     </svg>
                   </button>
-                  {/* <i class="bi bi-trash" onClick={() => remove(k)}></i> */}
                   <RemoveRedEyeIcon
                     onClick={() => {
                       setShoweye(true);
@@ -114,7 +103,6 @@ const Todo = () => {
         </Modal>
 
         {/* update modal */}
-
         <Modal show={show} onHide={handleClose}>
           <h3 className="text-center mt-2">Update Your Task</h3>
           <Modal.Header>

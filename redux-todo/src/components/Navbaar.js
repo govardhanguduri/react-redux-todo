@@ -3,15 +3,12 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-// import Button from '@mui/material/Button';
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import { DeleteContext } from "./context/ContextProvider";
 import Alert from "react-bootstrap/Alert";
 
 const Navbaar = () => {
   const { dlttask, setDlettask } = useContext(DeleteContext);
-  // console.log(dlttask);
 
   return (
     <>
@@ -35,7 +32,6 @@ const Navbaar = () => {
           </Toolbar>
         </AppBar>
       </Box>
-
       {dlttask ? (
         <Alert
           variant="danger"
